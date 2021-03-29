@@ -31,8 +31,8 @@ generator_test_param[
 generator_test_param["train_path"] = os.path.join(
     pathlib.Path(__file__).parent.absolute(),
     "..",
-    "sample_data",
-    "ophys_tiny_761605196.tif",
+    "test",
+    "combine.tif",
 )
 generator_test_param["batch_size"] = 5
 generator_test_param["start_frame"] = 0
@@ -52,12 +52,12 @@ generator_param["pre_post_frame"] = 30
 generator_param["train_path"] = os.path.join(
     pathlib.Path(__file__).parent.absolute(),
     "..",
-    "sample_data",
-    "ophys_tiny_761605196.tif",
+    "test",
+    "combine.tif",
 )
 generator_param["batch_size"] = 5
 generator_param["start_frame"] = 0
-generator_param["end_frame"] = 99
+generator_param["end_frame"] = -1
 generator_param["pre_post_omission"] = 0
 
 # Those are parameters used for the network topology
@@ -95,7 +95,7 @@ training_param["model_string"] = (
 
 # Where do you store ongoing training progress
 jobdir = os.path.join(
-    "/Users/jeromel/test", training_param["model_string"] + "_" + run_uid,
+    "/content/deepinterpolation/test", training_param["model_string"] + "_" + run_uid,
 )
 training_param["output_dir"] = jobdir
 
